@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikunj K. Mangukiya, Ph.D. — Hydrology Research</title>
+<meta name="description" content="Nikunj K. Mangukiya, Ph.D. — Postdoctoral Research Fellow at the National University of Singapore. Deep learning and physics-informed hydrological modeling, flood risk mapping, streamflow prediction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F3F6F4;
+    --paper-alt: #E8EEEA;
+    --ink: #17272E;
+    --ink-soft: #4A5C61;
+    --water: #2C6B7C;
+    --water-deep: #1F4E5C;
+    --hazard: #BE7B3D;
+    --line: #C9D3CD;
+    --line-soft: #DCE4DF;
+    --max: 760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--water-deep);}
+  a:hover{color:var(--hazard);}
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  .wrap-wide{max-width:920px; margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(243,246,244,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  nav .wrap-wide{
+    display:flex; align-items:center; justify-content:space-between;
+    height:60px;
+  }
+  nav .brand{font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.03em; color:var(--water-deep); text-decoration:none;}
+  nav ul{list-style:none; display:flex; gap:22px; margin:0; padding:0;}
+  nav a.navlink{
+    color:var(--ink-soft); text-decoration:none; font-size:14px; font-weight:500;
+    padding:4px 2px; border-bottom:1px solid transparent;
+  }
+  nav a.navlink:hover{color:var(--ink); border-bottom-color:var(--water);}
+  .nav-toggle{display:none;}
+
+  /* HERO */
+  header.hero{
+    position:relative; overflow:hidden;
+    padding:96px 0 84px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .contour-bg{
+    position:absolute; inset:0; z-index:0;
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero .wrap-wide{position:relative; z-index:1;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px; text-transform:uppercase;
+    letter-spacing:0.14em; color:var(--water); margin-bottom:18px; display:block;
+  }
+  h1.name{font-size:clamp(2.4rem, 5vw, 3.4rem); line-height:1.08;}
+  .tagline{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:400;
+    font-size:1.25rem; color:var(--water-deep); margin-top:14px;
+  }
+  .hero-lede{max-width:560px; margin-top:22px; color:var(--ink-soft); font-size:1.02rem;}
+  .hero-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px;}
+  .pill{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    border:1px solid var(--line); border-radius:999px;
+    padding:7px 14px; color:var(--ink-soft); text-decoration:none;
+    transition:all .15s ease;
+  }
+  .pill:hover{border-color:var(--water); color:var(--water-deep); background:var(--paper-alt);}
+
+  /* HYDROGRAPH DIVIDER */
+  .hydrograph{width:100%; height:34px; display:block; margin:0 auto;}
+  .hydrograph-wrap{padding:6px 0 2px;}
+
+  /* SECTIONS */
+  section{padding:64px 0;}
+  section.alt{background:var(--paper-alt);}
+  .section-head{margin-bottom:34px;}
+  .section-num{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--water);
+    letter-spacing:0.1em; text-transform:uppercase; display:block; margin-bottom:8px;
+  }
+  h2.section-title{font-size:1.7rem;}
+
+  p{margin:0 0 16px;}
+  .lede-block p{color:var(--ink-soft);}
+
+  /* RESEARCH CARDS */
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .card{
+    border:1px solid var(--line); border-radius:4px; padding:22px 22px 20px;
+    background:var(--paper);
+  }
+  section.alt .card{background:var(--paper);}
+  .card h3{font-size:1.05rem; margin-bottom:8px; font-weight:600;}
+  .card p{font-size:0.95rem; color:var(--ink-soft); margin:0;}
+  .card .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--hazard);
+    text-transform:uppercase; letter-spacing:0.08em; display:block; margin-bottom:10px;
+  }
+
+  /* TIMELINE (experience/education) */
+  .tl-item{
+    display:grid; grid-template-columns:150px 1fr; gap:18px;
+    padding:20px 0; border-top:1px solid var(--line-soft);
+  }
+  .tl-item:first-child{border-top:none;}
+  .tl-date{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--water); padding-top:2px;}
+  .tl-org{font-weight:600; font-size:0.95rem; margin-top:2px; color:var(--ink-soft);}
+  .tl-title{font-size:1.05rem; font-weight:600; margin-bottom:3px; font-family:'Fraunces',serif;}
+  .tl-desc{color:var(--ink-soft); font-size:0.93rem; margin-top:6px;}
+  .grade{
+    display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    color:var(--water-deep); background:var(--paper-alt); border:1px solid var(--line);
+    border-radius:3px; padding:2px 7px; margin-top:8px;
+  }
+
+  /* PUBLICATIONS */
+  .pub-stats{display:flex; flex-wrap:wrap; gap:28px; margin-bottom:36px;}
+  .stat{border-left:2px solid var(--water); padding-left:14px;}
+  .stat .num{font-family:'Fraunces', serif; font-size:2rem; font-weight:600; line-height:1;}
+  .stat .label{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;}
+  .qbar{display:flex; height:8px; width:100%; max-width:340px; border-radius:2px; overflow:hidden; margin-top:14px;}
+  .qbar span{display:block; height:100%;}
+  .qbar-legend{display:flex; gap:14px; margin-top:8px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft);}
+  .qbar-legend i{display:inline-block; width:8px; height:8px; border-radius:1px; margin-right:5px; vertical-align:middle;}
+
+  .pub-list{list-style:none; margin:0; padding:0;}
+  .pub-list li{
+    padding:16px 0; border-top:1px solid var(--line-soft);
+    display:grid; grid-template-columns:1fr auto; gap:14px; align-items:start;
+  }
+  .pub-list li:first-child{border-top:none;}
+  .pub-main{font-size:0.96rem; line-height:1.5;}
+  .pub-main .yr{color:var(--water-deep); font-weight:600;}
+  .pub-main .venue{font-style:italic; color:var(--ink-soft);}
+  .badge{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; white-space:nowrap;
+    border:1px solid var(--line); border-radius:3px; padding:3px 8px; color:var(--ink-soft); height:fit-content;
+  }
+  .badge.q1{border-color:var(--water); color:var(--water-deep);}
+  .more-link{margin-top:26px; font-size:0.94rem;}
+
+  /* AWARDS */
+  .award-list{list-style:none; margin:0; padding:0;}
+  .award-list li{
+    padding:13px 0 13px 22px; border-top:1px solid var(--line-soft);
+    position:relative; font-size:0.95rem; color:var(--ink-soft);
+  }
+  .award-list li:first-child{border-top:none;}
+  .award-list li::before{
+    content:""; position:absolute; left:2px; top:21px;
+    width:6px; height:6px; background:var(--hazard); border-radius:50%;
+  }
+  .service-grid{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .service-grid .pill{cursor:default;}
+  .service-grid .pill:hover{border-color:var(--line); color:var(--ink-soft); background:transparent;}
+
+  /* CONTACT / FOOTER */
+  footer{padding:70px 0 50px; text-align:center;}
+  footer h2{font-size:1.6rem; margin-bottom:14px;}
+  footer p.sub{color:var(--ink-soft); max-width:440px; margin:0 auto 26px;}
+  .contact-links{display:flex; flex-wrap:wrap; justify-content:center; gap:10px;}
+  .copyright{
+    margin-top:60px; font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    color:var(--ink-soft); opacity:0.7;
+  }
+
+  @media (max-width:640px){
+    nav ul{gap:14px;}
+    nav a.navlink{font-size:12.5px;}
+    .cards{grid-template-columns:1fr;}
+    .tl-item{grid-template-columns:1fr;}
+    .tl-date{padding-top:0;}
+    section{padding:48px 0;}
+    header.hero{padding:64px 0 56px;}
+    .pub-list li{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap-wide">
+    <a href="#top" class="brand">N. MANGUKIYA</a>
+    <ul>
+      <li><a class="navlink" href="#about">About</a></li>
+      <li><a class="navlink" href="#experience">Experience</a></li>
+      <li><a class="navlink" href="#education">Education</a></li>
+      <li><a class="navlink" href="#publications">Publications</a></li>
+      <li><a class="navlink" href="#awards">Awards</a></li>
+      <li><a class="navlink" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <svg class="contour-bg" viewBox="0 0 1200 420" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="var(--water)" stroke-width="1">
+      <path d="M-50,380 C 150,330 300,410 500,360 S 850,300 1250,350" opacity="0.18"/>
+      <path d="M-50,400 C 180,350 320,430 520,390 S 880,330 1250,380" opacity="0.15"/>
+      <path d="M-50,420 C 200,375 340,440 540,415 S 900,360 1250,405" opacity="0.12"/>
+      <path d="M-50,340 C 130,285 280,370 480,320 S 820,255 1250,310" opacity="0.14"/>
+      <path d="M-50,300 C 110,240 260,330 460,270 S 800,205 1250,260" opacity="0.10"/>
+    </g>
+  </svg>
+  <div class="wrap-wide">
+    <span class="eyebrow">Postdoctoral Research Fellow · NUS Singapore</span>
+    <h1 class="name">Nikunj K.<br>Mangukiya, Ph.D.</h1>
+    <p class="tagline">Navigating the world of hydrology.</p>
+    <p class="hero-lede">I develop deep learning and physics-informed models for streamflow prediction, flood risk mapping, and hydrological forecasting in data-sparse and human-influenced watersheds — bridging AI and hydrological science to address real-world water challenges.</p>
+    <div class="hero-links">
+      <a class="pill" href="mailto:nikk.mangukiya@gmail.com">Email</a>
+      <a class="pill" href="https://scholar.google.com/citations?user=swFldcoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="pill" href="https://orcid.org/0000-0001-8132-6958" target="_blank" rel="noopener">ORCID</a>
+      <a class="pill" href="https://www.researchgate.net/profile/Nikunj-Mangukiya" target="_blank" rel="noopener">ResearchGate</a>
+      <a class="pill" href="https://www.linkedin.com/in/nikunj-mangukiya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill" href="https://twitter.com/nikk_mn" target="_blank" rel="noopener">X / Twitter</a>
+    </div>
+  </div>
+</header>
+
+<div class="hydrograph-wrap wrap-wide">
+  <svg class="hydrograph" viewBox="0 0 920 34" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,26 L 200,26 C 260,26 280,4 340,4 C 400,4 430,28 500,28 C 560,28 590,10 650,10 C 720,10 750,24 920,24" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01 — About</span>
+      <h2 class="section-title">Background</h2>
+    </div>
+    <div class="lede-block">
+      <p>I am a Postdoctoral Research Fellow at the <a href="https://nus.edu.sg/" target="_blank" rel="noopener">National University of Singapore (NUS)</a>. I completed my Ph.D. in Hydrology at the <a href="https://iitr.ac.in/Departments/Hydrology%20Department/Home.html" target="_blank" rel="noopener">Department of Hydrology, IIT Roorkee</a>, where my research focused on developing deep learning-based frameworks for hydrological predictions — addressing data sparsity, temporally discrete observations, physical interpretability in regulated river systems, and flood risk assessment in ungauged watersheds.</p>
+      <p>My current work continues to explore the integration of artificial intelligence and hydrological sciences, with a focus on data-driven and physics-informed modeling, climate change impacts, and flood hazard mapping. I'm especially interested in fostering interdisciplinary collaborations to solve real-world water challenges.</p>
+      <p>My toolbox includes Python, R, MATLAB, MIKE Hydro River/Flood/11/21, HEC-RAS, ArcGIS, QGIS, and Google Earth Engine — alongside a continuing habit of chasing math puzzles for fun.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="research">
+  <div class="wrap-wide">
+    <div class="section-head">
+      <span class="section-num">02 — Focus</span>
+      <h2 class="section-title">Research domain</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Deep learning hydrology</span>
+        <h3>Streamflow prediction in data-sparse watersheds</h3>
+        <p>LSTM and hybrid deep learning frameworks for daily streamflow forecasting where observations are aggregated, intermittent, or entirely absent.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Physics-informed modeling</span>
+        <h3>Differentiable process-based models</h3>
+        <p>Integrating reservoir and dam dynamics into differentiable hydrological models to improve interpretability alongside predictive skill.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Flood risk</span>
+        <h3>Flood hazard &amp; inundation mapping</h3>
+        <p>Multi-model ensemble frameworks and AHP–machine learning integration for fluvial flood inundation and hazard mapping in ungauged basins.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Open data</span>
+        <h3>Large-sample hydrology datasets</h3>
+        <p>Co-developer of CAMELS-IND — hydrometeorological time series and catchment attributes for 228+ catchments across Peninsular India.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03 — Experience</span>
+      <h2 class="section-title">Research &amp; professional roles</h2>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Nov 2025 —<br>Present</div>
+      <div>
+        <div class="tl-title">Postdoctoral Research Fellow, Hydrological Modelling</div>
+        <div class="tl-org">National University of Singapore (NUS), Singapore</div>
+        <p class="tl-desc">Network of Experimental Catchments for Understanding Runoff Formation and Flood Risk — development of hybrid hydrological models.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Jul 2025 —<br>Sep 2025</div>
+      <div>
+        <div class="tl-title">Research Associate I, Hydrology</div>
+        <div class="tl-org">Indian Institute of Technology Roorkee</div>
+        <p class="tl-desc">Leveraging NCMRWF weather forecasts for enhanced streamflow forecasting with deep learning. Funded through the Indian Institute of Tropical Meteorology, Pune.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Jul 2021 —<br>Jun 2025</div>
+      <div>
+        <div class="tl-title">Ph.D. Research Scholar / Teaching Assistant</div>
+        <div class="tl-org">Department of Hydrology, IIT Roorkee</div>
+        <p class="tl-desc">Tutorial and teaching assistance for Hydrologic Data Collection & Processing, Engineering Hydrology, and the Tinkering & Mentoring course; hydrometeorological observatory duties.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Feb 2021 —<br>Jul 2021</div>
+      <div>
+        <div class="tl-title">Project Associate I, Salt &amp; Marine Chemicals</div>
+        <div class="tl-org">CSIR–Central Salt and Marine Chemicals Research Institute</div>
+        <p class="tl-desc">Design and supervision of civil construction for a process to raise brine evaporation rate 30–40% and improve solar salt yield. Funded by DST, Government of India.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Dec 2019 —<br>Jan 2021</div>
+      <div>
+        <div class="tl-title">Faculty of Civil Engineering</div>
+        <div class="tl-org">Career Solution Academy (GATEFORUM)</div>
+        <p class="tl-desc">Faculty member and career mentor teaching Engineering Hydrology, Open Channel Flow, Geomatics, Environmental Engineering, and Construction Management.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">Feb 2017 —<br>Jun 2017</div>
+      <div>
+        <div class="tl-title">Lecturer, Civil Engineering</div>
+        <div class="tl-org">Shree Dhanvantary College of Diploma Engineering</div>
+        <p class="tl-desc">Faculty member and research mentor teaching Applied Mechanics, Soil Mechanics, and Railway/Harbour/Tunnel Engineering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">04 — Education</span>
+      <h2 class="section-title">Academic record</h2>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">2021 —<br>2025</div>
+      <div>
+        <div class="tl-title">Ph.D. in Hydrology</div>
+        <div class="tl-org">Department of Hydrology, IIT Roorkee</div>
+        <p class="tl-desc">Thesis: "Deep Learning-based Models for Hydrological Predictions in Distinct Indian Watersheds." Adviser: Prof. Ashutosh Sharma. MHRD-funded fellowship.</p>
+        <span class="grade">9.43 / 10 CGPA</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2017 —<br>2019</div>
+      <div>
+        <div class="tl-title">M.Tech. in Water Resources Engineering</div>
+        <div class="tl-org">Sardar Vallabhbhai National Institute of Technology, Surat</div>
+        <p class="tl-desc">Thesis: "Assessing Role of Contour Canal in Flood Inundation Extent of Semi-arid River Basin." Adviser: Prof. S. M. Yadav.</p>
+        <span class="grade">8.90 / 10 CGPA</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date">2012 —<br>2016</div>
+      <div>
+        <div class="tl-title">B.E. in Civil Engineering</div>
+        <div class="tl-org">Shree Swami Atmanand Saraswati Institute of Technology (GTU)</div>
+        <span class="grade">8.83 / 10 CGPA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap-wide">
+    <div class="section-head">
+      <span class="section-num">05 — Publications</span>
+      <h2 class="section-title">Selected publications</h2>
+    </div>
+
+    <div class="pub-stats">
+      <div class="stat"><div class="num">16</div><div class="label">Journal articles</div></div>
+      <div class="stat"><div class="num">05</div><div class="label">Book chapters</div></div>
+      <div class="stat"><div class="num">24</div><div class="label">Conference papers</div></div>
+    </div>
+    <div class="qbar">
+      <span style="width:56.25%; background:var(--water-deep);"></span>
+      <span style="width:18.75%; background:var(--water);"></span>
+      <span style="width:12.5%; background:var(--hazard); opacity:0.7;"></span>
+      <span style="width:12.5%; background:var(--line);"></span>
+    </div>
+    <div class="qbar-legend">
+      <span><i style="background:var(--water-deep);"></i>Q1 (9)</span>
+      <span><i style="background:var(--water);"></i>Q2 (3)</span>
+      <span><i style="background:var(--hazard); opacity:0.7;"></i>Q3 (2)</span>
+      <span><i style="background:var(--line);"></i>Q4 (2)</span>
+    </div>
+
+    <ul class="pub-list" style="margin-top:32px;">
+      <li>
+        <div class="pub-main">Mangukiya, N.K., Sahu, G., Gupta, S., &amp; Sharma, A. <span class="yr">(2026)</span> Benchmarking and selecting optimal hydrological models for large-sample applications considering complexity and uncertainty. <span class="venue">Water Resources Research</span>, 62(7).</div>
+        <span class="badge q1">Q1 · IF 6.3</span>
+      </li>
+      <li>
+        <div class="pub-main">Mangukiya, N.K., Baruah, A., Barman, D., Arjun, B.M., &amp; Sharma, A. <span class="yr">(2026)</span> Integrating analytical hierarchy process and machine learning for enhancing flood hazard mapping. <span class="venue">Natural Hazards Review</span>, 27(2).</div>
+        <span class="badge">Q2 · IF 3.3</span>
+      </li>
+      <li>
+        <div class="pub-main">Sahu, G., Mangukiya, N.K., &amp; Sharma, A. <span class="yr">(2026)</span> Does MC-LSTM model improve the reliability of streamflow prediction in human-influenced watersheds? <span class="venue">Journal of Hydrology</span>, 665.</div>
+        <span class="badge q1">Q1 · IF 7.3</span>
+      </li>
+      <li>
+        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2025)</span> Integrating reservoir dynamics into differentiable process-based hydrological model for enhanced streamflow estimation. <span class="venue">Water Resources Research</span>, 61(7).</div>
+        <span class="badge q1">Q1 · IF 6.3</span>
+      </li>
+      <li>
+        <div class="pub-main">Mangukiya, N.K., Kumar, K.B., Dey, P., Sharma, S., Bejagam, V., Mujumdar, P.P., &amp; Sharma, A. <span class="yr">(2025)</span> CAMELS-IND: hydrometeorological time series and catchment attributes for 228 catchments in Peninsular India. <span class="venue">Earth System Science Data</span>, 17(2).</div>
+        <span class="badge q1">Q1 · IF 13.6</span>
+      </li>
+      <li>
+        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2025)</span> Deep learning-based approach for enhancing streamflow prediction in watersheds with aggregated and intermittent observations. <span class="venue">Water Resources Research</span>, 61(1).</div>
+        <span class="badge q1">Q1 · IF 6.3</span>
+      </li>
+      <li>
+        <div class="pub-main">Mangukiya, N.K., Kushwaha, S., &amp; Sharma, A. <span class="yr">(2024)</span> A novel multi-model ensemble framework for fluvial flood inundation mapping. <span class="venue">Environmental Modelling &amp; Software</span>, 180.</div>
+        <span class="badge q1">Q1 · IF 5.2</span>
+      </li>
+      <li>
+        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2024)</span> Alternate pathway for regional flood frequency analysis in data-sparse region. <span class="venue">Journal of Hydrology</span>, 629.</div>
+        <span class="badge q1">Q1 · IF 7.3</span>
+      </li>
+    </ul>
+
+    <p class="more-link">Full list of 16 journal articles, 5 book chapters, and 24 conference presentations on <a href="https://scholar.google.com/citations?user=swFldcoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0001-8132-6958" target="_blank" rel="noopener">ORCID</a>.</p>
+  </div>
+</section>
+
+<section class="alt" id="awards">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">06 — Recognition</span>
+      <h2 class="section-title">Awards &amp; service</h2>
+    </div>
+
+    <ul class="award-list">
+      <li>Outstanding Reviewer (2025), Hydrological Sciences Journal — IAHS &amp; Taylor &amp; Francis</li>
+      <li>SERB International Travel Support to attend the HydroML 2024 Symposium, Richland WA, USA</li>
+      <li>CO-PREPARE Academic Grant (Indo-German Project) for Potsdam Summer School 2022, Germany</li>
+      <li>1st prize, Data-Wrangling event, Pravaaha 2022 — Water Techfest, IIT Roorkee</li>
+      <li>Qualified GATE ESE 2021 (AIR 463), GATE CE 2017 (AIR 5104), GATE CE 2019 (AIR 16996)</li>
+    </ul>
+
+    <p style="margin-top:30px; color:var(--ink-soft); font-size:0.95rem;">Manuscript reviewer — <strong style="color:var(--ink);">147 reviews across 29 international journals</strong>, including <em>Journal of Hydrology</em>, <em>Water Resources Research</em>, and <em>Scientific Reports</em>.</p>
+
+    <div class="service-grid">
+      <span class="pill">ASCE — Student Member</span>
+      <span class="pill">CIWEM — Student Member</span>
+      <span class="pill">IAHS — Member</span>
+      <span class="pill">EGU — Student Member</span>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="sub">Open to collaborations at the intersection of AI and hydrological science — reach out by email or connect through any of the links below.</p>
+    <div class="contact-links">
+      <a class="pill" href="mailto:nikk.mangukiya@gmail.com">nikk.mangukiya@gmail.com</a>
+      <a class="pill" href="https://scholar.google.com/citations?user=swFldcoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="pill" href="https://orcid.org/0000-0001-8132-6958" target="_blank" rel="noopener">ORCID</a>
+      <a class="pill" href="https://www.researchgate.net/profile/Nikunj-Mangukiya" target="_blank" rel="noopener">ResearchGate</a>
+      <a class="pill" href="https://www.linkedin.com/in/nikunj-mangukiya/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pill" href="https://twitter.com/nikk_mn" target="_blank" rel="noopener">X / Twitter</a>
+    </div>
+    <div class="copyright">© <span id="year"></span> Nikunj K. Mangukiya · National University of Singapore</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
