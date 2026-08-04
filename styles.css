@@ -142,6 +142,26 @@ p{margin:0 0 16px;}
 .contact-card .sub{display:block; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); margin-top:1px;}
 
 /* RESEARCH CARDS */
+.pub-feature-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px 44px; margin-top:6px;}
+.pub-feature{display:flex; gap:16px; align-items:flex-start;}
+.pub-feature-thumb{
+  width:84px; height:84px; border-radius:6px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--paper); font-family:'Fraunces', serif; font-weight:700; font-size:1rem;
+  letter-spacing:0.02em;
+}
+.pub-feature-journal{
+  font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase;
+  letter-spacing:0.08em; color:var(--water); display:block; margin-bottom:5px;
+}
+.pub-feature-cite{font-family:'Fraunces', serif; font-weight:600; font-size:1rem; color:var(--ink); margin-bottom:4px;}
+.pub-feature-title{
+  display:block; color:var(--water-deep); font-style:italic; font-size:0.94rem;
+  line-height:1.42; margin-bottom:9px; text-decoration:none;
+}
+.pub-feature-title:hover{color:var(--hazard);}
+.pub-feature-desc{font-size:0.87rem; color:var(--ink-soft); line-height:1.55; margin:0;}
+
 .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
 .card{
   border:1px solid var(--line); border-radius:4px; padding:22px 22px 20px;
@@ -254,6 +274,8 @@ h3.sub-title:first-of-type{margin-top:0;}
   nav ul{gap:14px;}
   nav a.navlink{font-size:12.5px;}
   .cards{grid-template-columns:1fr;}
+  .pub-feature-grid{grid-template-columns:1fr;}
+  .pub-feature-thumb{width:64px; height:64px; font-size:0.85rem;}
   .tl-item, .tl-item-edu{grid-template-columns:1fr; text-align:left;}
   .tl-logo{width:48px; height:48px;}
   .tl-date{padding-top:0;}
