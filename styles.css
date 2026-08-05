@@ -317,9 +317,19 @@ h3.sub-title:first-of-type{margin-top:0;}
 .service-grid .pill{cursor:default;}
 .service-grid .pill:hover{border-color:var(--line); color:var(--ink-soft); background:transparent;}
 
+.award-list .sub-list{list-style:none; margin:8px 0 0; padding:0;}
+.award-list .sub-list li{
+  padding:4px 0 4px 16px; border-top:none; font-size:0.88rem; position:relative;
+}
+.award-list .sub-list li::before{
+  content:""; position:absolute; left:0; top:11px;
+  width:4px; height:4px; background:var(--water); border-radius:50%;
+}
+
 .rtable{width:100%; border-collapse:collapse; margin-top:10px; font-size:0.92rem;}
 .rtable td{padding:8px 10px; border-top:1px solid var(--line-soft); color:var(--ink-soft);}
 .rtable td:last-child{text-align:right; font-family:'IBM Plex Mono', monospace; color:var(--water-deep); white-space:nowrap;}
+.rtable td.pub-col{font-size:0.85rem; color:var(--ink-soft); opacity:0.85;}
 .rtable tr:first-child td{border-top:none;}
 
 /* CONTACT / FOOTER */
