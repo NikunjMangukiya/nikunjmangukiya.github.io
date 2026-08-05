@@ -261,9 +261,14 @@ section.alt .card{background:var(--paper);}
 .stat .num{font-family:'Fraunces', serif; font-size:2rem; font-weight:600; line-height:1;}
 .stat .label{font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;}
 .qbar{display:flex; height:8px; width:100%; max-width:340px; border-radius:2px; overflow:hidden; margin-top:14px;}
-.qbar span{display:block; height:100%;}
+.qbar span{display:block; height:100%; cursor:pointer;}
+.qbar span.active{outline:2px solid var(--ink); outline-offset:1px;}
 .qbar-legend{display:flex; gap:14px; margin-top:8px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); flex-wrap:wrap;}
+.qbar-legend span{cursor:pointer; padding:2px 5px; border-radius:3px; transition:all .15s ease;}
+.qbar-legend span:hover{color:var(--ink);}
+.qbar-legend span.active{background:var(--paper-alt); color:var(--ink); font-weight:600;}
 .qbar-legend i{display:inline-block; width:8px; height:8px; border-radius:1px; margin-right:5px; vertical-align:middle;}
+.pub-header-row{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap;}
 
 .pub-list{list-style:none; margin:0; padding:0;}
 .pub-list li{
@@ -273,12 +278,15 @@ section.alt .card{background:var(--paper);}
 .pub-list li:first-child{border-top:none;}
 .pub-main{font-size:0.96rem; line-height:1.5;}
 .pub-main .yr{color:var(--water-deep); font-weight:600;}
-.pub-main .venue{font-style:italic; color:var(--ink-soft);}
+.doi-link{color:var(--water-deep); text-decoration:none; word-break:break-all;}
+.doi-link:hover{color:var(--hazard);}
+.badge-stack{display:flex; flex-direction:column; gap:6px; align-items:flex-end; height:fit-content;}
 .badge{
   font-family:'IBM Plex Mono', monospace; font-size:11px; white-space:nowrap;
   border:1px solid var(--line); border-radius:3px; padding:3px 8px; color:var(--ink-soft); height:fit-content;
 }
 .badge.q1{border-color:var(--water); color:var(--water-deep);}
+.badge-special{border-color:var(--hazard); color:var(--hazard);}
 .more-link{margin-top:26px; font-size:0.94rem;}
 
 h3.sub-title{

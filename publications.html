@@ -16,12 +16,13 @@
     <a href="index.html" class="brand">N. MANGUKIYA</a>
     <ul>
       <li><a class="navlink" href="index.html">Home</a></li>
-<li><a class="navlink" href="research.html">Research</a></li>
-<li><a class="navlink" href="experience.html">Experience</a></li>
 <li><a class="navlink" href="education.html">Education</a></li>
+<li><a class="navlink" href="experience.html">Experience</a></li>
+<li><a class="navlink" href="research.html">Research</a></li>
 <li><a class="navlink active" href="publications.html">Publications</a></li>
-<li><a class="navlink" href="awards.html">Awards</a></li>
-<li><a class="navlink" href="contact.html">Contact</a></li>
+<li><a class="navlink" href="awards.html">Awards &amp; Recognition</a></li>
+<li><a class="navlink" href="others.html">Others</a></li>
+<li><a class="navlink" href="gallery.html">Gallery</a></li>
 
     </ul>
   </div>
@@ -30,7 +31,6 @@
   <div class="wrap-wide">
     <span class="eyebrow">Publications</span>
     <h1>Publications</h1>
-    <p class="page-lede">16 peer-reviewed journal articles, 5 book chapters, and 24 conference presentations.</p>
   </div>
 </header>
 <div class="hydrograph-wrap wrap-wide">
@@ -41,119 +41,148 @@
 
 <section>
   <div class="wrap-wide">
-    <div class="pub-stats">
-      <div class="stat"><div class="num">16</div><div class="label">Journal articles</div></div>
-      <div class="stat"><div class="num">05</div><div class="label">Book chapters</div></div>
-      <div class="stat"><div class="num">24</div><div class="label">Conference papers</div></div>
-    </div>
-    <div class="qbar">
-      <span style="width:56.25%; background:var(--water-deep);"></span>
-      <span style="width:18.75%; background:var(--water);"></span>
-      <span style="width:12.5%; background:var(--hazard); opacity:0.7;"></span>
-      <span style="width:12.5%; background:var(--line);"></span>
-    </div>
-    <div class="qbar-legend">
-      <span><i style="background:var(--water-deep);"></i>Q1 (9)</span>
-      <span><i style="background:var(--water);"></i>Q2 (3)</span>
-      <span><i style="background:var(--hazard); opacity:0.7;"></i>Q3 (2)</span>
-      <span><i style="background:var(--line);"></i>Q4 (2)</span>
+    <div class="pub-header-row">
+      <div>
+        <div class="pub-stats">
+          <div class="stat"><div class="num">16</div><div class="label">Journal articles</div></div>
+          <div class="stat"><div class="num">05</div><div class="label">Book chapters</div></div>
+          <div class="stat"><div class="num">24</div><div class="label">Conference papers</div></div>
+        </div>
+        <div class="qbar">
+          <span class="qseg" data-q="q1" onclick="pubFilter('q1')" style="width:56.25%; background:var(--water-deep);"></span>
+          <span class="qseg" data-q="q2" onclick="pubFilter('q2')" style="width:18.75%; background:var(--water);"></span>
+          <span class="qseg" data-q="q3" onclick="pubFilter('q3')" style="width:12.5%; background:var(--hazard); opacity:0.7;"></span>
+          <span class="qseg" data-q="q4" onclick="pubFilter('q4')" style="width:12.5%; background:var(--line);"></span>
+        </div>
+        <div class="qbar-legend">
+          <span class="qleg" data-q="q1" onclick="pubFilter('q1')"><i style="background:var(--water-deep);"></i>Q1 (9)</span>
+          <span class="qleg" data-q="q2" onclick="pubFilter('q2')"><i style="background:var(--water);"></i>Q2 (3)</span>
+          <span class="qleg" data-q="q3" onclick="pubFilter('q3')"><i style="background:var(--hazard); opacity:0.7;"></i>Q3 (2)</span>
+          <span class="qleg" data-q="q4" onclick="pubFilter('q4')"><i style="background:var(--line);"></i>Q4 (2)</span>
+        </div>
+      </div>
+      <div class="contact-grid" style="max-width:280px;">
+        <a class="contact-card" href="https://scholar.google.com/citations?user=swFldcoAAAAJ&hl=en" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5V17c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg></span>
+          <span><span class="label">Google Scholar</span><span class="sub">All publications</span></span>
+        </a>
+        <a class="contact-card" href="https://orcid.org/0000-0001-8132-6958" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="9.3" cy="8.5" r="0.6" fill="currentColor" stroke="none"/><line x1="9.3" y1="10.8" x2="9.3" y2="16"/><path d="M12.5 10.8h1.8a2.6 2.6 0 010 5.2h-1.8v-5.2z"/></svg></span>
+          <span><span class="label">ORCID</span><span class="sub">0000-0001-8132-6958</span></span>
+        </a>
+      </div>
     </div>
 
     <h3 class="sub-title">Journal articles</h3>
     <ul class="pub-list">
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Sahu, G., Gupta, S., &amp; Sharma, A. <span class="yr">(2026)</span> Benchmarking and selecting optimal hydrological models for large-sample applications considering complexity and uncertainty. <span class="venue">Water Resources Research</span>, 62(7).</div>
-        <span class="badge q1">Q1 &middot; IF 6.3</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Sahu, G., Gupta, S., &amp; Sharma, A.</span> <span class="yr">(2026)</span> &ldquo;Benchmarking and selecting optimal hydrological models for large-sample applications considering complexity and uncertainty&rdquo;, <strong>Water Resources Research</strong>, 62(7), e2026WR044753. <a class="doi-link" href="https://doi.org/10.1029/2026WR044753" target="_blank" rel="noopener">https://doi.org/10.1029/2026WR044753</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 6.3</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Baruah, A., Barman, D., Arjun, B.M., &amp; Sharma, A. <span class="yr">(2026)</span> Integrating analytical hierarchy process and machine learning for enhancing flood hazard mapping. <span class="venue">Natural Hazards Review</span>, 27(2).</div>
-        <span class="badge">Q2 &middot; IF 3.3</span>
+      <li data-q="q2">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Baruah, A., Barman, D., Arjun, B.M., &amp; Sharma, A.</span> <span class="yr">(2026)</span> &ldquo;Integrating analytical hierarchy process and machine learning for enhancing flood hazard mapping&rdquo;, <strong>Natural Hazards Review</strong>, 27(2), 05025018. <a class="doi-link" href="https://doi.org/10.1061/NHREFO.NHENG-2188" target="_blank" rel="noopener">https://doi.org/10.1061/NHREFO.NHENG-2188</a></div>
+        <div class="badge-stack"><span class="badge q2">Q2 &middot; IF 3.3</span></div>
       </li>
-      <li>
-        <div class="pub-main">Sahu, G., Mangukiya, N.K., &amp; Sharma, A. <span class="yr">(2026)</span> Does MC-LSTM model improve the reliability of streamflow prediction in human-influenced watersheds? <span class="venue">Journal of Hydrology</span>, 665.</div>
-        <span class="badge q1">Q1 &middot; IF 7.3</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors">Sahu, G., <strong>Mangukiya, N.K.</strong>, &amp; Sharma, A.</span> <span class="yr">(2026)</span> &ldquo;Does MC-LSTM model improve the reliability of streamflow prediction in human-influenced watersheds?&rdquo;, <strong>Journal of Hydrology</strong>, 665 (February 2026), 134711. <a class="doi-link" href="https://doi.org/10.1016/j.jhydrol.2025.134711" target="_blank" rel="noopener">https://doi.org/10.1016/j.jhydrol.2025.134711</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 7.3</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2025)</span> Integrating reservoir dynamics into differentiable process-based hydrological model for enhanced streamflow estimation. <span class="venue">Water Resources Research</span>, 61(7).</div>
-        <span class="badge q1">Q1 &middot; IF 6.3</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong> &amp; Sharma, A.</span> <span class="yr">(2025)</span> &ldquo;Integrating reservoir dynamics into differentiable process-based hydrological model for enhanced streamflow estimation&rdquo;, <strong>Water Resources Research</strong>, 61(7), e2025WR040268. <a class="doi-link" href="https://doi.org/10.1029/2025WR040268" target="_blank" rel="noopener">https://doi.org/10.1029/2025WR040268</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 6.3</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Kumar, K.B., Dey, P., Sharma, S., Bejagam, V., Mujumdar, P.P., &amp; Sharma, A. <span class="yr">(2025)</span> CAMELS-IND: hydrometeorological time series and catchment attributes for 228 catchments in Peninsular India. <span class="venue">Earth System Science Data</span>, 17(2).</div>
-        <span class="badge q1">Q1 &middot; IF 13.6</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Kumar, K.B., Dey, P., Sharma, S., Bejagam, V., Mujumdar, P.P., &amp; Sharma, A.</span> <span class="yr">(2025)</span> &ldquo;CAMELS-IND: hydrometeorological time series and catchment attributes for 228 catchments in Peninsular India&rdquo;, <strong>Earth System Science Data</strong>, 17(2), 461&ndash;491. <a class="doi-link" href="https://doi.org/10.5194/essd-17-461-2025" target="_blank" rel="noopener">https://doi.org/10.5194/essd-17-461-2025</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 13.6</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2025)</span> Deep learning-based approach for enhancing streamflow prediction in watersheds with aggregated and intermittent observations. <span class="venue">Water Resources Research</span>, 61(1).</div>
-        <span class="badge q1">Q1 &middot; IF 6.3</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong> &amp; Sharma, A.</span> <span class="yr">(2025)</span> &ldquo;Deep learning-based approach for enhancing streamflow prediction in watersheds with aggregated and intermittent observations&rdquo;, <strong>Water Resources Research</strong>, 61(1), e2024WR037331. <a class="doi-link" href="https://doi.org/10.1029/2024WR037331" target="_blank" rel="noopener">https://doi.org/10.1029/2024WR037331</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 6.3</span><span class="badge badge-special">Most Read 2025</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Kushwaha, S., &amp; Sharma, A. <span class="yr">(2024)</span> A novel multi-model ensemble framework for fluvial flood inundation mapping. <span class="venue">Environmental Modelling &amp; Software</span>, 180.</div>
-        <span class="badge q1">Q1 &middot; IF 5.2</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Kushwaha, S., &amp; Sharma, A.</span> <span class="yr">(2024)</span> &ldquo;A novel multi-model ensemble framework for fluvial flood inundation mapping&rdquo;, <strong>Environmental Modelling &amp; Software</strong>, 180 (September 2024), 106163. <a class="doi-link" href="https://doi.org/10.1016/j.envsoft.2024.106163" target="_blank" rel="noopener">https://doi.org/10.1016/j.envsoft.2024.106163</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 5.2</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2024)</span> Alternate pathway for regional flood frequency analysis in data-sparse region. <span class="venue">Journal of Hydrology</span>, 629.</div>
-        <span class="badge q1">Q1 &middot; IF 7.3</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong> &amp; Sharma, A.</span> <span class="yr">(2024)</span> &ldquo;Alternate pathway for regional flood frequency analysis in data-sparse region&rdquo;, <strong>Journal of Hydrology</strong>, 629 (February 2024), 130635. <a class="doi-link" href="https://doi.org/10.1016/j.jhydrol.2024.130635" target="_blank" rel="noopener">https://doi.org/10.1016/j.jhydrol.2024.130635</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 7.3</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Kumar, A., &amp; Sharma, A. <span class="yr">(2023)</span> Machine learning-based regional flood frequency analysis of Indian watersheds. <span class="venue">CLEAN &ndash; Soil, Air, Water</span>, 53(3).</div>
-        <span class="badge">Q3 &middot; IF 2.0</span>
+      <li data-q="q3">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Kumar, A., &amp; Sharma, A.</span> <span class="yr">(2023)</span> &ldquo;Machine learning-based regional flood frequency analysis of Indian watersheds&rdquo;, <strong>CLEAN &ndash; Soil, Air, Water</strong>, 53(3), 2300120. <a class="doi-link" href="https://doi.org/10.1002/clen.202300120" target="_blank" rel="noopener">https://doi.org/10.1002/clen.202300120</a></div>
+        <div class="badge-stack"><span class="badge q3">Q3 &middot; IF 2.0</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Sharma, A., &amp; Shen, C. <span class="yr">(2023)</span> How to enhance hydrological predictions in hydrologically distinct watersheds of the Indian subcontinent? <span class="venue">Hydrological Processes</span>, 37(7).</div>
-        <span class="badge">Q2 &middot; IF 3.1</span>
+      <li data-q="q2">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Sharma, A., &amp; Shen, C.</span> <span class="yr">(2023)</span> &ldquo;How to enhance hydrological predictions in hydrologically distinct watersheds of the Indian subcontinent?&rdquo;, <strong>Hydrological Processes</strong>, 37(7), e14936. <a class="doi-link" href="https://doi.org/10.1002/hyp.14936" target="_blank" rel="noopener">https://doi.org/10.1002/hyp.14936</a></div>
+        <div class="badge-stack"><span class="badge q2">Q2 &middot; IF 3.1</span></div>
       </li>
-      <li>
-        <div class="pub-main">Gangani, P., Mangukiya, N.K., Mehta, D.J., Muttil, N., &amp; Rathnayake, U. <span class="yr">(2023)</span> Evaluating the efficacy of different DEMs for application in flood frequency and risk mapping of the Indian coastal river basin. <span class="venue">Climate</span>, 11(5). <em>Editor&rsquo;s Choice</em>.</div>
-        <span class="badge">Q2 &middot; IF 4.0</span>
+      <li data-q="q2">
+        <div class="pub-main"><span class="cite-authors">Gangani, P., <strong>Mangukiya, N.K.</strong>, Mehta, D.J., Muttil, N., &amp; Rathnayake, U.</span> <span class="yr">(2023)</span> &ldquo;Evaluating the efficacy of different DEMs for application in flood frequency and risk mapping of the Indian coastal river basin&rdquo;, <strong>Climate</strong>, 11(5), 114. <a class="doi-link" href="https://doi.org/10.3390/cli11050114" target="_blank" rel="noopener">https://doi.org/10.3390/cli11050114</a></div>
+        <div class="badge-stack"><span class="badge q2">Q2 &middot; IF 4.0</span><span class="badge badge-special">Editor&rsquo;s Choice</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K. &amp; Sharma, A. <span class="yr">(2022)</span> Flood risk mapping for the lower Narmada basin in India: a machine learning and IoT-based framework. <span class="venue">Natural Hazards</span>, 113.</div>
-        <span class="badge q1">Q1 &middot; IF 4.5</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong> &amp; Sharma, A.</span> <span class="yr">(2022)</span> &ldquo;Flood risk mapping for the lower Narmada basin in India: a machine learning and IoT-based framework&rdquo;, <strong>Natural Hazards</strong>, 113, 1285&ndash;1304. <a class="doi-link" href="https://doi.org/10.1007/s11069-022-05347-2" target="_blank" rel="noopener">https://doi.org/10.1007/s11069-022-05347-2</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 4.5</span></div>
       </li>
-      <li>
-        <div class="pub-main">Sharma, A., Baruah, A., Mangukiya, N., Hinge, G., &amp; Bharali, B. <span class="yr">(2022)</span> Evaluation of gangetic dolphin habitat suitability under hydroclimatic changes using a coupled hydrological-hydrodynamic approach. <span class="venue">Ecological Informatics</span>, 69.</div>
-        <span class="badge q1">Q1 &middot; IF 8.5</span>
+      <li data-q="q1">
+        <div class="pub-main"><span class="cite-authors">Sharma, A., Baruah, A., <strong>Mangukiya, N.</strong>, Hinge, G., &amp; Bharali, B.</span> <span class="yr">(2022)</span> &ldquo;Evaluation of gangetic dolphin habitat suitability under hydroclimatic changes using a coupled hydrological-hydrodynamic approach&rdquo;, <strong>Ecological Informatics</strong>, 69, 101639. <a class="doi-link" href="https://doi.org/10.1016/j.ecoinf.2022.101639" target="_blank" rel="noopener">https://doi.org/10.1016/j.ecoinf.2022.101639</a></div>
+        <div class="badge-stack"><span class="badge q1">Q1 &middot; IF 8.5</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K., Mehta, D.J., &amp; Jariwala, R. <span class="yr">(2022)</span> Flood frequency analysis and inundation mapping for lower Narmada basin, India. <span class="venue">Water Practice &amp; Technology</span>, 17(2).</div>
-        <span class="badge">Q3 &middot; IF 2.4</span>
+      <li data-q="q3">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Mehta, D.J., &amp; Jariwala, R.</span> <span class="yr">(2022)</span> &ldquo;Flood frequency analysis and inundation mapping for lower Narmada basin, India&rdquo;, <strong>Water Practice &amp; Technology</strong>, 17(2), 612&ndash;622. <a class="doi-link" href="https://doi.org/10.2166/wpt.2022.009" target="_blank" rel="noopener">https://doi.org/10.2166/wpt.2022.009</a></div>
+        <div class="badge-stack"><span class="badge q3">Q3 &middot; IF 2.4</span></div>
       </li>
-      <li>
-        <div class="pub-main">Kumar, V., Sharma, K.V., Mangukiya, N.K., Tiwari, D.K., Ramkar, P.V., &amp; Rathnayake, U. <span class="yr">(2025)</span> Machine learning applications in flood forecasting and predictions, challenges, and way-out in the perspective of changing environment. <span class="venue">AIMS Environmental Science</span>, 12(1).</div>
-        <span class="badge">Q4 &middot; IF 1.3</span>
+      <li data-q="q4">
+        <div class="pub-main"><span class="cite-authors">Kumar, V., Sharma, K.V., <strong>Mangukiya, N.K.</strong>, Tiwari, D.K., Ramkar, P.V., &amp; Rathnayake, U.</span> <span class="yr">(2025)</span> &ldquo;Machine learning applications in flood forecasting and predictions, challenges, and way-out in the perspective of changing environment&rdquo;, <strong>AIMS Environmental Science</strong>, 12(1), 72&ndash;105. <a class="doi-link" href="https://doi.org/10.3934/environsci.2025004" target="_blank" rel="noopener">https://doi.org/10.3934/environsci.2025004</a></div>
+        <div class="badge-stack"><span class="badge q4">Q4 &middot; IF 1.3</span></div>
       </li>
-      <li>
-        <div class="pub-main">Mangukiya, N.K. &amp; Yadav, S.M. <span class="yr">(2022)</span> Integrating 1D and 2D hydrodynamic models for semi-arid river basin flood simulation. <span class="venue">International Journal of Hydrology Science and Technology</span>, 14(2).</div>
-        <span class="badge">Q4 &middot; IF 1.0</span>
+      <li data-q="q4">
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong> &amp; Yadav, S.M.</span> <span class="yr">(2022)</span> &ldquo;Integrating 1D and 2D hydrodynamic models for semi-arid river basin flood simulation&rdquo;, <strong>International Journal of Hydrology Science and Technology</strong>, 14(2), 206&ndash;228. <a class="doi-link" href="https://doi.org/10.1504/IJHST.2022.124549" target="_blank" rel="noopener">https://doi.org/10.1504/IJHST.2022.124549</a></div>
+        <div class="badge-stack"><span class="badge q4">Q4 &middot; IF 1.0</span></div>
       </li>
     </ul>
 
     <h3 class="sub-title">Book chapters</h3>
     <ul class="pub-list">
       <li>
-        <div class="pub-main">Batalini de Macedo, M., Mangukiya, N.K., Fava, M.C., Sharma, A., et al. <span class="yr">(2024)</span> Performance analysis of physically-based (HEC-RAS, CADDIES) and AI-based (LSTM) flood models for two case studies. <span class="venue">Proceedings of IAHS</span>, 386.</div>
-        <span class="badge">WoS &middot; Scopus</span>
+        <div class="pub-main"><span class="cite-authors">Batalini de Macedo, M., <strong>Mangukiya, N.K.</strong>, Fava, M.C., Sharma, A., et al.</span> <span class="yr">(2024)</span> &ldquo;Performance analysis of physically-based (HEC-RAS, CADDIES) and AI-based (LSTM) flood models for two case studies&rdquo;, <strong>Proceedings of IAHS</strong>, 386, 41&ndash;46. <a class="doi-link" href="https://doi.org/10.5194/piahs-386-41-2024" target="_blank" rel="noopener">https://doi.org/10.5194/piahs-386-41-2024</a></div>
+        <div class="badge-stack"><span class="badge">WoS &middot; Scopus indexed</span></div>
       </li>
       <li>
-        <div class="pub-main">Mangukiya, N.K. &amp; Andharia, B.R. <span class="yr">(2023)</span> Modeling of flood inundation extent in data-scarce regions: the case study of Bhavnagar district. <span class="venue">Lecture Notes in Civil Engineering</span>, vol 340, Springer.</div>
-        <span class="badge">Scopus</span>
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong> &amp; Andharia, B.R.</span> <span class="yr">(2023)</span> &ldquo;Modeling of flood inundation extent in data-scarce regions: the case study of Bhavnagar district&rdquo;, <strong>Flood Forecasting and Hydraulic Structures</strong>, Lecture Notes in Civil Engineering, vol 340. Springer, Singapore. <a class="doi-link" href="https://doi.org/10.1007/978-981-99-1890-4_2" target="_blank" rel="noopener">https://doi.org/10.1007/978-981-99-1890-4_2</a></div>
+        <div class="badge-stack"><span class="badge">Scopus indexed</span></div>
       </li>
       <li>
-        <div class="pub-main">Mangukiya, N.K., Baladaniya, K.B., Gopika, B., Sourabh, N., &amp; Timbadiya, P.V. <span class="yr">(2022)</span> Design of storm-water drainage network for educational institute. <span class="venue">Lecture Notes in Civil Engineering</span>, vol 178, Springer.</div>
-        <span class="badge">Scopus</span>
+        <div class="pub-main"><span class="cite-authors"><strong>Mangukiya, N.K.</strong>, Baladaniya, K.B., Gopika, B., Sourabh, N., &amp; Timbadiya, P.V.</span> <span class="yr">(2022)</span> &ldquo;Design of storm-water drainage network for educational institute&rdquo;, <strong>Climate Change and Water Security</strong>, Lecture Notes in Civil Engineering, vol 178. Springer, Singapore. <a class="doi-link" href="https://doi.org/10.1007/978-981-16-5501-2_36" target="_blank" rel="noopener">https://doi.org/10.1007/978-981-16-5501-2_36</a></div>
+        <div class="badge-stack"><span class="badge">Scopus indexed</span></div>
       </li>
       <li>
-        <div class="pub-main">Mehta, D.J., Yadav, S.M., Mangukiya, N.K., &amp; Lukhi, Z. <span class="yr">(2022)</span> Hydrodynamic simulation and dam-break analysis using HEC-RAS 5. <span class="venue">Lecture Notes in Civil Engineering</span>, vol 205, Springer.</div>
-        <span class="badge">Scopus</span>
+        <div class="pub-main"><span class="cite-authors">Mehta, D.J., Yadav, S.M., <strong>Mangukiya, N.K.</strong>, &amp; Lukhi, Z.</span> <span class="yr">(2022)</span> &ldquo;Hydrodynamic simulation and dam-break analysis using HEC-RAS 5&rdquo;, <strong>A System Engineering Approach to Disaster Resilience</strong>, Lecture Notes in Civil Engineering, vol 205. Springer, Singapore. <a class="doi-link" href="https://doi.org/10.1007/978-981-16-7397-9_29" target="_blank" rel="noopener">https://doi.org/10.1007/978-981-16-7397-9_29</a></div>
+        <div class="badge-stack"><span class="badge">Scopus indexed</span></div>
       </li>
       <li>
-        <div class="pub-main">Yadav, S.M. &amp; Mangukiya, N.K. <span class="yr">(2021)</span> Semi-arid river basin flood: causes, damages, and measures. <span class="venue">Lecture Notes in Civil Engineering</span>, vol 106, Springer.</div>
-        <span class="badge">Scopus</span>
+        <div class="pub-main"><span class="cite-authors">Yadav, S.M. &amp; <strong>Mangukiya, N.K.</strong></span> <span class="yr">(2021)</span> &ldquo;Semi-arid river basin flood: causes, damages, and measures&rdquo;, <strong>Proceedings of the Fifth International Conference in Ocean Engineering (ICOE2019)</strong>, Lecture Notes in Civil Engineering, vol 106. Springer, Singapore. <a class="doi-link" href="https://doi.org/10.1007/978-981-15-8506-7_16" target="_blank" rel="noopener">https://doi.org/10.1007/978-981-15-8506-7_16</a></div>
+        <div class="badge-stack"><span class="badge">Scopus indexed</span></div>
       </li>
     </ul>
 
     <p class="more-link">Full list of 24 conference &amp; workshop presentations (EGU, AGU, IAHS, IUGG, IndoML, and more) available on <a href="https://scholar.google.com/citations?user=swFldcoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> and <a href="https://orcid.org/0000-0001-8132-6958" target="_blank" rel="noopener">ORCID</a>.</p>
   </div>
 </section>
+<script>
+function pubFilter(q){
+  var items = document.querySelectorAll('.pub-list li[data-q]');
+  var segs = document.querySelectorAll('.qseg');
+  var legs = document.querySelectorAll('.qleg');
+  var current = document.body.getAttribute('data-pub-filter') || '';
+  var next = (current === q) ? '' : q;
+  document.body.setAttribute('data-pub-filter', next);
+  items.forEach(function(li){
+    li.style.display = (!next || li.dataset.q === next) ? '' : 'none';
+  });
+  segs.forEach(function(s){ s.classList.toggle('active', next !== '' && s.dataset.q === next); });
+  legs.forEach(function(s){ s.classList.toggle('active', next !== '' && s.dataset.q === next); });
+}
+</script>
 <footer class="site-footer">
   <div class="wrap-wide copyright">&copy; <span id="year"></span> Nikunj K. Mangukiya &middot; National University of Singapore</div>
 </footer>
