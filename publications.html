@@ -55,6 +55,7 @@
           <span class="qseg" data-q="q4" onclick="pubFilter('q4')" style="width:12.5%; background:var(--line);"></span>
         </div>
         <div class="qbar-legend">
+          <span class="qleg" data-q="" onclick="pubFilter('')">All (16)</span>
           <span class="qleg" data-q="q1" onclick="pubFilter('q1')"><i style="background:var(--water-deep);"></i>Q1 (9)</span>
           <span class="qleg" data-q="q2" onclick="pubFilter('q2')"><i style="background:var(--water);"></i>Q2 (3)</span>
           <span class="qleg" data-q="q3" onclick="pubFilter('q3')"><i style="background:var(--hazard); opacity:0.7;"></i>Q3 (2)</span>
@@ -166,6 +167,7 @@
     </ul>
 
     <h3 class="sub-title">Conference papers</h3>
+    <p style="text-align:right; font-size:0.82rem; color:var(--ink-soft); margin-top:-10px; margin-bottom:14px;">* Presenting author</p>
     <ul class="pub-list">
       <li>
         <div class="pub-main"><span class="pub-num">1.</span> <span class="cite-authors">Drillet, Z.*, Bironne, A., Chaput, A., Floriancic, M., <strong>Mangukiya, N.K.</strong>, Ivanov, V., Ooi, S.K., Babovic, V., &amp; Fatichi, S.</span> <span class="yr">(2026)</span> &ldquo;Introducing a network of experimental catchments in the urban tropics&rdquo;, <strong>EGU General Assembly 2026</strong>, Vienna, Austria, 3&ndash;8 May 2026, EGU26-12009. <a class="doi-link" href="https://doi.org/10.5194/egusphere-egu26-12009" target="_blank" rel="noopener">https://doi.org/10.5194/egusphere-egu26-12009</a></div>
@@ -272,13 +274,16 @@ function pubFilter(q){
   var segs = document.querySelectorAll('.qseg');
   var legs = document.querySelectorAll('.qleg');
   var current = document.body.getAttribute('data-pub-filter') || '';
-  var next = (current === q) ? '' : q;
+  var next = (q !== '' && current === q) ? '' : q;
   document.body.setAttribute('data-pub-filter', next);
   items.forEach(function(li){
     li.style.display = (!next || li.dataset.q === next) ? '' : 'none';
   });
   segs.forEach(function(s){ s.classList.toggle('active', next !== '' && s.dataset.q === next); });
-  legs.forEach(function(s){ s.classList.toggle('active', next !== '' && s.dataset.q === next); });
+  legs.forEach(function(s){
+    if(s.dataset.q === ''){ s.classList.toggle('active', next === ''); }
+    else{ s.classList.toggle('active', next !== '' && s.dataset.q === next); }
+  });
 }
 </script>
 <footer class="site-footer">

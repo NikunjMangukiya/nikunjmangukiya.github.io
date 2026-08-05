@@ -215,10 +215,13 @@ p{margin:0 0 16px;}
 .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
 .card{
   border:1px solid var(--line); border-radius:4px; padding:22px 22px 20px;
-  background:var(--paper);
+  background:var(--paper); transition:all .15s ease;
 }
+a.card{cursor:pointer;}
+a.card:hover{border-color:var(--water); background:var(--paper-alt);}
+a.card:hover h3{color:var(--water-deep);}
 section.alt .card{background:var(--paper);}
-.card h3{font-size:1.05rem; margin-bottom:8px; font-weight:600;}
+.card h3{font-size:1.05rem; margin-bottom:8px; font-weight:600; transition:color .15s ease;}
 .card p{font-size:0.95rem; color:var(--ink-soft); margin:0;}
 .card .tag{
   font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--hazard);
