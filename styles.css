@@ -212,6 +212,15 @@ p{margin:0 0 16px;}
 .code-repo-item img{width:100%; height:auto; border-radius:6px; border:1px solid var(--line); margin-bottom:14px; display:block;}
 .page-footnote{font-size:11.5px; color:var(--ink-soft); opacity:0.8; margin-top:50px; padding-top:20px; border-top:1px solid var(--line-soft);}
 
+/* GALLERY */
+.gallery-grid{display:grid; grid-template-columns:1fr 1fr; gap:36px 30px;}
+.gallery-item img{width:100%; height:auto; border-radius:6px; border:1px solid var(--line); display:block;}
+.gallery-item.wide{grid-column:1 / -1;}
+.gallery-caption{margin-top:10px; font-size:0.9rem; color:var(--ink-soft); line-height:1.5;}
+@media (max-width:640px){
+  .gallery-grid{grid-template-columns:1fr;}
+}
+
 .cards{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
 .card{
   border:1px solid var(--line); border-radius:4px; padding:22px 22px 20px;
